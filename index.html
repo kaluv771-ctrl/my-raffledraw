@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Raffle Draw Application">
+    <title>Raffle Draw</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="brand">
+            <div class="brand-icon">🎟️</div>
+            <div>
+                <h1>Lordscope's Raffle<span>Draw</span></h1>
+                <p>Fair • Fast • Random</p>
+            </div>
+        </div>
+
+        <div class="header-status">
+            <span class="status-dot"></span>
+            <span>System Ready</span>
+        </div>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-grid">
+
+        <!-- PARTICIPANTS -->
+        <section class="card participants-card">
+
+            <div class="section-header">
+                <div>
+                    <span class="section-label">ENTRIES</span>
+                    <h2>Participants</h2>
+                    <p>Add the people entering the raffle.</p>
+                </div>
+
+                <div class="participant-count" id="participantCount">
+                    0
+                </div>
+            </div>
+
+
+            <div class="input-area">
+
+                <textarea
+                    id="participantInput"
+                    placeholder="Enter participant names...
+
+John Doe
+Mary Smith
+David Brown
+Sarah Williams"
+                ></textarea>
+
+                <div class="input-actions">
+                    <button class="btn primary" id="addParticipants">
+                        + Add Participants
+                    </button>
+
+                    <button class="btn secondary" id="demoButton">
+                        ✨ Demo
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="participants-container">
+
+                <div class="list-title">
+                    <span>Current Participants</span>
+
+                    <button id="clearParticipants">
+                        Clear all
+                    </button>
+                </div>
+
+                <div
+                    class="participants-list"
+                    id="participantsList"
+                >
+                    <div class="empty-state">
+                        <div class="empty-icon">👥</div>
+                        <p>No participants yet</p>
+                        <span>Add names above to begin.</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- DRAW CENTER -->
+        <section class="card draw-card">
+
+            <div class="draw-header">
+                <span class="section-label">THE MOMENT</span>
+                <h2>Ready to Draw?</h2>
+                <p>Let the random selection begin.</p>
+            </div>
+
+
+            <!-- Raffle Ball -->
+            <div class="raffle-machine">
+
+                <div class="machine-glow"></div>
+
+                <div class="raffle-ball" id="raffleBall">
+
+                    <div class="ball-inner">
+                        <span>🎟️</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Winner -->
+            <div class="winner-box" id="winnerBox">
+
+                <span class="winner-label">
+                    WINNER
+                </span>
+
+                <div
+                    class="winner-name"
+                    id="winnerName"
+                >
+                    —
+                </div>
+
+                <div
+                    class="winner-subtitle"
+                    id="winnerSubtitle"
+                >
+                    Your winner will appear here
+                </div>
+
+            </div>
+
+
+            <!-- Draw Button -->
+            <button
+                class="draw-button"
+                id="drawButton"
+            >
+                <span class="draw-icon">🎲</span>
+                <span>DRAW WINNER</span>
+            </button>
+
+
+            <!-- Options -->
+            <label class="remove-option">
+
+                <input
+                    type="checkbox"
+                    id="removeWinner"
+                >
+
+                <span class="custom-checkbox"></span>
+
+                <span>
+                    Remove winner after draw
+                </span>
+
+            </label>
+
+        </section>
+
+
+
+        <!-- HISTORY -->
+        <section class="card history-card">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-label">RESULTS</span>
+                    <h2>Winner History</h2>
+                    <p>Previous raffle winners.</p>
+                </div>
+
+                <button
+                    class="clear-history"
+                    id="clearHistory"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div
+                class="history-list"
+                id="historyList"
+            >
+
+                <div class="empty-state">
+                    <div class="empty-icon">🏆</div>
+                    <p>No winners yet</p>
+                    <span>Your draw results will appear here.</span>
+                </div>
+
+            </div>
+
+
+            <div class="raffle-stats">
+
+                <div class="stat">
+                    <span>Total Draws</span>
+                    <strong id="totalDraws">0</strong>
+                </div>
+
+                <div class="stat">
+                    <span>Participants</span>
+                    <strong id="totalParticipants">0</strong>
+                </div>
+
+            </div>
+
+
+            <button
+                class="reset-button"
+                id="resetRaffle"
+            >
+                ↻ Reset Raffle
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <span>
+            RaffleDraw
+        </span>
+
+        <span>
+            Random selection system
+        </span>
+
+    </footer>
+
+</div>
+
+
+<!-- CONFETTI -->
+<div
+    class="confetti-container"
+    id="confettiContainer"
+></div>
+
+
+<!-- TOAST -->
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
